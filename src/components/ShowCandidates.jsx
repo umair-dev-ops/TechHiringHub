@@ -14,7 +14,7 @@ const[users,setUsers]=useState();
 
 
 const getUsers= async(e)=>{
-  fetch("/api/getUsers", { 
+  fetch("/getUsers", { 
     method:"Post",
     headers:{
     "Content-type": "application/json"
