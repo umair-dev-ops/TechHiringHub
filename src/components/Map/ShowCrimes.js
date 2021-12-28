@@ -49,7 +49,7 @@ function ShowCrimes(props) {
         //   method: 'GET',
           
         // })
-        fetch(`/getUserstest`, {
+        fetch(`/api/getUserstest`, {
         method:"Post",
         headers:{
         "Content-type": "application/json"
