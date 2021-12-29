@@ -1,2 +1,2 @@
-/api/* https://tech-hiring-hub-server.herokuapp.com/:splat 200
+/* https://tech-hiring-hub-server.herokuapp.com/:splat 200
 /* /index.html 200
