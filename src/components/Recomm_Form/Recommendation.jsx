@@ -28,7 +28,7 @@ const Recommendation = () => {
   const {email}=useParams();
   const get_questions= async()=>{
       try{
-        const res = await fetch("/getquestion", { 
+        const res = await fetch(`${localStorage.getItem('api')}/getquestion`, { 
           method:"Get",
           headers:{
           "Content-type": "application/json"

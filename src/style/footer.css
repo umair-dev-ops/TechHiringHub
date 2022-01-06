@@ -1,11 +1,11 @@
 
 /*********footer*******************/
-. kilimanjaro_area {
+.kilimanjaro_area {
     position: relative;
     z-index: 1;
 	}
 	.foo_top_header_one {
-    background-color: #15151e;
+    background-color: #02060B;
     color: #fff;
 }
 .section_padding_100_70 {
@@ -91,6 +91,9 @@ ul {
     margin-bottom: 5px;
     padding-bottom: 10px;
 }
+.kilimanjaro_links ul{
+    padding-left: 0rem !important;
+}
 .kilimanjaro_links a {
     color: rgba(255,255,255,.5);
     font-size: 13px;
@@ -119,6 +122,9 @@ p, ul li, ol li {
     margin-bottom: 3px;
     padding: 7px 12px;
 }
+.kilimanjaro_social_links ul {
+    padding-left: 0rem;
+}
 .kilimanjaro_blog_area .kilimanjaro_date {
     color: #27ae60;
     font-size: 13px;
@@ -143,8 +149,10 @@ p, ul li, ol li {
     width: 75px;
 }
 .kilimanjaro_links a i {
-    padding-right: 10px;
+    
+    padding-right: 5px;
 }
+
   /* :: 18.0 Footer Area CSS */
 
     .footer_area {

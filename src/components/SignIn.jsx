@@ -13,7 +13,7 @@ const SignIn= ()=>{
     const sendData= async(e)=>{
         e.preventDefault();
         
-        const res = await fetch("/login", { 
+        const res = await fetch(`${localStorage.getItem('api')}/login`, { 
           method:"Post",
           headers:{
           "Content-type": "application/json"

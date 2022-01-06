@@ -12,6 +12,9 @@ import './App.css';
 import Recommendation from './components/Recomm_Form/Recommendation';
 import ProminentAppBar from './components/NavbarH';
 import ShowCandidates from './components/ShowCandidates';
+import JobRegister from './components/employer/Postjob';
+import Profile from './components/employee/profile';
+
 
 const Routing = () => {
   
@@ -44,6 +47,14 @@ const Routing = () => {
       <Route path="/logout">
         <Logout/>
       </Route>
+      <Route path="/postjob">
+        <JobRegister/>
+      </Route>
+      <Route path="/profile">
+        <Profile/>
+      </Route>
+
+
 
      
 
@@ -55,6 +66,7 @@ const Routing = () => {
 }
 
 function App() {
+  
   return (
     <>
   <Routing></Routing>

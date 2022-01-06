@@ -95,7 +95,7 @@ const Part6 = ()=>{
       name,
       email,
       password,}=stateMaintain;
-    const res = await fetch("/register", { 
+    const res = await fetch(`${localStorage.getItem('api')}/register`, { 
       method:"Post",
       headers:{
       "Content-type": "application/json"
@@ -122,11 +122,11 @@ const Part6 = ()=>{
       {
         history.push("/home");
         
-        const resFile = await fetch("/upload", { 
+        const resFile = await fetch(`${localStorage.getItem('api')}/upload`, { 
           method:"Post",
         
         });
-        const sendMail = await fetch("/sendEmail", { 
+        const sendMail = await fetch(`${localStorage.getItem('api')}/sendEmail`, { 
           method:"Post",
           headers:{
             "Content-type": "application/json"

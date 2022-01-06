@@ -33,13 +33,29 @@ import react,{useEffect, useState} from "react";
              
         }
     }
+    const handleExperienceFilter=(event)=>{
+        let expArr =props.experience ;
+        let check = event.target.checked;
+        let experience_check = event.target.value;
+        if(check){
+            
+                props.setExperience(oldArray=>[...oldArray,experience_check])
+            
+        }else{ 
+            var index = expArr.indexOf(experience_check);
+           
+           
+                expArr.splice(index, 1);
+                props.setExperience([...expArr]);
+             
+        }
+    }
     useEffect(()=>{
       dispatch({type:'SALARYFILTER',payload:props.sal});
       dispatch({type:'SKILLSFILTER',payload:props.skills});
 
 
-      console.log(props.skills);
-    },[props.sal,props.skills]);
+    },[props.sal,props.skills,props.experience]);
     
      
     return (
@@ -79,9 +95,9 @@ import react,{useEffect, useState} from "react";
         <h6 class="font-weight-bold">Experience</h6>
        
         <form>
-            <div class="form-group"> <input  type="checkbox" id="25off" value="internee"/> <label for="25">Internee</label> </div>
-            <div class="form-group"> <input type="checkbox" id="5off" value="fresher"/> <label for="5off" id="off" >Fresher</label> </div>
-            <div class="form-group"> <input type="checkbox" id="5off" value="experience"/> <label for="5off" id="off" >Experience</label> </div>
+            <div class="form-group"> <input onClick={handleExperienceFilter}  type="checkbox" id="25off" value="internee"/> <label for="25">Internee</label> </div>
+            <div class="form-group"> <input onClick={handleExperienceFilter} type="checkbox" id="5off" value="fresher"/> <label for="5off" id="off" >Fresher</label> </div>
+            <div class="form-group"> <input onClick={handleExperienceFilter} type="checkbox" id="5off" value="experienced"/> <label for="5off" id="off" >Experience</label> </div>
 
         </form>
     

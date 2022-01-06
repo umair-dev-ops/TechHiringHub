@@ -108,83 +108,7 @@ import './NavbarH.css'
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
-function CheckboxesTags() {
-  return (
-    <Autocomplete
-      multiple
-      id="checkboxes-tags-demo"
-      options={top100Films}
-      disableCloseOnSelect
-      getOptionLabel={(option) => option.title}
-      renderOption={(props, option, { selected }) => (
-        <li {...props}>
-          <Checkbox
-            icon={icon}
-            checkedIcon={checkedIcon}
-            style={{ marginRight: 8 }}
-            checked={selected}
-          />
-          {option.title}
-        </li>
-      )}
-      style={{ width: 500 }}
-      renderInput={(params) => (
-        <TextField {...params}  placeholder="Favorites" />
-      )}
-    />
-  );
-}
 
-// Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
-const top100Films = [
-  { title: 'The Shawshank Redemption', year: 1994 },
-  { title: 'The Godfather', year: 1972 },
-  { title: 'The Godfather: Part II', year: 1974 },
-  { title: 'The Dark Knight', year: 2008 },
-  { title: '12 Angry Men', year: 1957 },
-  { title: "Schindler's List", year: 1993 },
-  { title: 'Pulp Fiction', year: 1994 },
-  {
-    title: 'The Lord of the Rings: The Return of the King',
-    year: 2003,
-  },
-  { title: 'The Good, the Bad and the Ugly', year: 1966 },
-  { title: 'Fight Club', year: 1999 },
-  {
-    title: 'The Lord of the Rings: The Fellowship of the Ring',
-    year: 2001,
-  },
-  {
-    title: 'Star Wars: Episode V - The Empire Strikes Back',
-    year: 1980,
-  },
-  { title: 'Forrest Gump', year: 1994 },
-  { title: 'Inception', year: 2010 },
-  {
-    title: 'The Lord of the Rings: The Two Towers',
-    year: 2002,
-  },
-  { title: "One Flew Over the Cuckoo's Nest", year: 1975 },
-  { title: 'Goodfellas', year: 1990 },
-  { title: 'The Matrix', year: 1999 },
-  { title: 'Seven Samurai', year: 1954 },
-  {
-    title: 'Star Wars: Episode IV - A New Hope',
-    year: 1977,
-  },
-  { title: 'City of God', year: 2002 },
-  { title: 'Se7en', year: 1995 },
-  { title: 'The Silence of the Lambs', year: 1991 },
-  { title: "It's a Wonderful Life", year: 1946 },
-  { title: 'Life Is Beautiful', year: 1997 },
-  { title: 'The Usual Suspects', year: 1995 },
-  { title: 'Léon: The Professional', year: 1994 },
-  { title: 'Spirited Away', year: 2001 },
-  { title: 'Saving Private Ryan', year: 1998 },
-  { title: 'Once Upon a Time in the West', year: 1968 },
-  { title: 'American History X', year: 1998 },
-  { title: 'Interstellar', year: 2014 },
-];
 
 
 const useStyles = makeStyles((theme) => ({
@@ -198,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
           flexGrow: 1,
         },
       }));
-
+     
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   alignItems: 'flex-start',
   paddingTop: theme.spacing(1),
@@ -220,12 +144,15 @@ export default function ProminentAppBar() {
       <AppBar  position="static">
         <StyledToolbar className="container">
         <Typography  variant="h6" className={classes.title}>
-             <img src={logo} alt="logo" className="w-25-i mt-1 ms-1-i"/>
+             {/* <img src={logo} alt="logo" className="w-25-i mt-1 ms-1-i"/> */}
+             <h1 style={{marginTop:"1px",marginBottom:"-0.5rem",fontWeight:"900",paddingTop:"0.2rem"}}>TechHiring</h1>
+             <h1 style={{marginTop:"1px",marginBottom:"-0.5rem",fontWeight:"900",paddingTop:"0.2rem"}}>Hub.com</h1>
+           
       </Typography>
-      <Stack direction="row" spacing={2}>
-        <button className="btn btn-success" style={{mystyle}}>Job Post</button>
-       <button className="btn btn-light" onClick={()=>{history.push('/signin')}}>Sign IN</button>
-       <button className="btn btn-light" onClick={()=>{history.push('/')}}>Register</button>
+      <Stack direction="row"  sx={{ mt: 3 }}  spacing={2}>
+        <button className="btn btn-success" style={{mystyle}} onClick={()=>{history.push('/postjob')}}>Job Post</button>
+       <button className="btn btn-light" style={{color:"#003580",fontWeight:"bolder"}} onClick={()=>{history.push('/signin')}}>Sign IN</button>
+       <button className="btn btn-light" style={{color:"#003580",fontWeight:"bolder"}} onClick={()=>{history.push('/')}}>Register</button>
       
     </Stack>
  

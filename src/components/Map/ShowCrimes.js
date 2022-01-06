@@ -10,6 +10,9 @@ import markerIconPng from "leaflet/dist/images/marker-icon.png";
 import {Icon} from 'leaflet';
 import { useDispatch,useSelector,shallowEqual } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { gql, useQuery } from '@apollo/client';
+
+
 
 // set response language. Defaults to english.
 Geocode.setLanguage("en");
@@ -36,30 +39,33 @@ const fetchIcon = (count, size) => {
 
 
 function ShowCrimes(props) {
+  
   const history = useHistory();
   const dispatch=useDispatch();
   const [cityDetail,setCityDetail]=useState([]);
+  const [cityDetailGraphql,setCityDetailGraphql]=useState();
+
+
   const [candidates,setCandidates]=useState([]);
   const city=[];
-  const [sal,setSal]=useState(props.sal);
   const userCity=[];
-  const [skill,setSkill]=useState("javascript");
+
   function for_users(){
         // fetch(`/getUserstest?sal=${props.sal}&skill=${skill}`, {
         //   method: 'GET',
           
         // })
-        fetch(`/api/getUserstest`, {
+        fetch(`${localStorage.getItem('api')}/getUserstest`, {
         method:"Post",
         headers:{
         "Content-type": "application/json"
         },
-        body: JSON.stringify({props,skill})
+        body: JSON.stringify({props})
       })
         .then(response => response.json())
         .then(result => {
           setCandidates(result);
-          console.log(candidates);
+          
           result.map(user=>(user.cities.map(city=>{
             userCity.push(city);
             })
@@ -68,6 +74,7 @@ function ShowCrimes(props) {
           setCityDetail(userCity);
         })
   }
+  
  
   
 
@@ -101,12 +108,50 @@ function ShowCrimes(props) {
     
     updateMap();
   }, [map]);
+  //graphql test
+    //implementing graphql endpoint
+const GET_USERS = gql`
+query GETUSER($filter: FiltersInput ){
+  user(filter: $filter){
+    cities {
+      city
+      lng
+      lat
+    }
+}
+}
+`;
+let userCityGraphql=[];
+const { loading, error, data } = useQuery(GET_USERS, {
+variables: { filter:props},
+});
+
+if (loading)
+{
+  console.log("wait");
+}
+else
+{
+  data.user.map(city=>{
+    userCityGraphql.push(city.cities);
+    })
+   
+  
+}
+useEffect(()=>{
+  console.log("graph"+(cityDetailGraphql));
+
+})
+
+  //yaha tk
   useEffect(()=>{
     console.log("showcrime rerender");
     setCityDetail([]);
     for_users();
-    console.log(cityDetail);
-  },[props.sal,props.skills]);
+    setCityDetailGraphql(userCityGraphql);
+    //console.log(cityDetail);
+  },[props.sal,props.skills,props.experience]);
+  
   
   useEffect(() => {
    
@@ -149,7 +194,7 @@ function ShowCrimes(props) {
   });
 
   console.log(clusters.length);
-
+  
   return (
     <>
     

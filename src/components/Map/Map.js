@@ -10,6 +10,8 @@ function Map() {
   const [sal,setSal]=useState(0);
   const[skills,setSkills]=useState([]);
   const [location,setLocation]=useState([]);
+  const [experience,setExperience]=useState([]);
+
   
  useEffect(() => {
   console.log(skills+"map");
@@ -17,13 +19,13 @@ function Map() {
  });
   return (
     <>
-      <Filter sal={sal} setSal={setSal} skills={skills} setSkills={setSkills}></Filter>
+      <Filter sal={sal} setSal={setSal} skills={skills} setSkills={setSkills} experience={experience} setExperience={setExperience}></Filter>
       <MapContainer   center={[34.047863,100.619652]} zoom={3}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-        <ShowCrimes sal={sal} setSal={setSal} skills={skills} setSkills={setSkills} location={location} setLocation={setLocation} />
+        <ShowCrimes sal={sal} setSal={setSal} skills={skills} setSkills={setSkills} location={location} setLocation={setLocation} experience={experience} setExperience={setExperience} />
       </MapContainer>
 
     </>

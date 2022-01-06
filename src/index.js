@@ -12,15 +12,32 @@ import { BrowserRouter} from "react-router-dom";
 import'./Form.css';
 import store from './store';
 import {Provider} from 'react-redux';   
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  useQuery,
+  gql
+} from "@apollo/client";
+const client = new ApolloClient({
+  uri: 'http://localhost:5000/graphql',
+  cache: new InMemoryCache()
+});
+
+//for netlify api
+localStorage.setItem('api','');
 
 store.subscribe(()=>{console.log(store.getState())})
+
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+    <ApolloProvider client={client}>
     <Provider store={store}>
     <App />
     </Provider>
+    </ApolloProvider>
     {/* <Provider store={store}>
     <Form/>
     </Provider> */}

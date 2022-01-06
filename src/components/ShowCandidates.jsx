@@ -14,7 +14,7 @@ const[users,setUsers]=useState();
 
 
 const getUsers= async(e)=>{
-  fetch("/getUsers", { 
+  fetch(`${localStorage.getItem('api')}/getUsers`, { 
     method:"Post",
     headers:{
     "Content-type": "application/json"

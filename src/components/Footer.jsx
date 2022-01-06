@@ -27,26 +27,30 @@ return(
 
                         <div class="kilimanjaro_part">
                             <h5>Important Links</h5>
-                            <ul class="kilimanjaro_links">
+                            <div class="kilimanjaro_links">
+                                <ul>
                                 <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Terms & Conditions</a></li>
                                 <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>About Licences</a></li>
                                 <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Help & Support</a></li>
                                 <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Careers</a></li>
                                 <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Privacy Policy</a></li>
                                 <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Community & Forum</a></li>
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">
                     <div class="kilimanjaro_part">
                             <h5>Social Links</h5>
-                            <ul class="kilimanjaro_social_links">
+                            <div class="kilimanjaro_social_links">
+                                <ul>
                                 <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
                                 <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
                                 <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i> Pinterest</a></li>
                                 <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i> YouTube</a></li>
                                 <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
                      
                     </div>
@@ -81,7 +85,7 @@ return(
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <p>© All Rights Reserved by <a href="#">Webublogoverflow.blogspot -(with all love)<i class="fa fa-love"></i></a></p>
+                        <p>© All Rights Reserved by <a href="#">PUCIT Students -(with all love)<i class="fa fa-love"></i></a></p>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,7 @@ const [jobList,setJobList]=useState([]);
     
     
       try{
-        const res = await fetch("/home", { 
+        const res = await fetch(`${localStorage.getItem('api')}/home`, { 
           method:"Get",
           headers:{
           "Content-type": "application/json"

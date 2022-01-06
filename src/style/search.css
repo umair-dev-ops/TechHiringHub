@@ -24,7 +24,7 @@
     height: calc(3rem + 10px) !important;
     border-radius:0 !important;
 }
-.form-control
+.form-control-search
 {
     border: 5px solid #FEBB02 !important;
 
