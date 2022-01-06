@@ -123,7 +123,7 @@ function get_cities_data()
         fetch(`http://ip-api.com/json/${data.ip}`)
         .then( res => res.json())
         .then(response => {
-          fetch(`/getcity?country=${response.country}`, {
+          fetch(`${localStorage.getItem('api')}/getcity?country=${response.country}`, {
             method: 'GET',
             
           })
