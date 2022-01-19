@@ -78,7 +78,7 @@ const Part3 = ()=>{
 
 return(
     <>
-         <div id="part-3" className="p-5" >
+         <div id="part-3" className="pt-2 ps-5 pb-5 pe-5" >
                 
                 <h5>What are your top skills?</h5>
                 <p>From 2 to 10</p>
@@ -86,7 +86,7 @@ return(
                 <div id="skillShowHide" style={{display:display}}>
                   <div className="me-2" id="selected">
                   {selected.map(skill=>(
-                    <button className="btn btn-outline-danger mt-2 rounded-pill me-2" type="button" onClick={()=>removeSkill(skill.language)}>{skill.language+" "}<span>({skill.experience})</span></button>
+                    <button className="btn btn-outline-success mt-2 rounded-pill me-2" type="button" onClick={()=>removeSkill(skill.language)}>{skill.language+" "}<span className="close">({skill.experience}) &times;</span></button>
                   ))}
 
                   </div>
@@ -120,7 +120,7 @@ return(
                       </div>
                       <div className="modal-footer">
         
-                        <button onClick={()=>{addSkill(tempSkill,tempExp);setdisplay("block");setdisplayS("none");setTempExp(0)}} id="add" type="button" className="btn btn-primary mb-3 rounded-pill" data-bs-dismiss="modal">Add Experience</button>
+                        <button onClick={()=>{addSkill(tempSkill,tempExp);setdisplay("block");setdisplayS("none");setTempExp(0)}} id="add" type="button" className="btn btn-primary mb-3" data-bs-dismiss="modal">Add Experience</button>
                       </div>
                     </div>
                   </div>
@@ -144,8 +144,8 @@ return(
               <p>Please check did you enter the name correct</p>
             </div>    */}
             <br/>
-            <button onClick={handleOnChangeBack}  id="btn-3b" type="button" className="btn btn-primary mb-3 rounded-pill" >Back</button>
-            <button onClick={handleOnChangeNext}  id="btn-3" type="button" className="btn btn-primary ms-2 mb-3 rounded-pill" disabled={nextButton.next3>=2?false:true}>Next</button>
+            <button onClick={handleOnChangeBack}  id="btn-3b" type="button" className="btn btn-primary mb-3 " >Back</button>
+            <button onClick={handleOnChangeNext}  id="btn-3" type="button" className="btn btn-primary ms-2 mb-3 " disabled={nextButton.next3>=2?false:true}>Next</button>
 
 
 

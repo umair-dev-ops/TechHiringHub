@@ -126,12 +126,12 @@ const RSkill=(email)=>{
  
 return(
     <>
-    <div id="part-4" className="p-5" >
+    <div id="part-4" className="pt-2 ps-5 pb-5 pe-5" >
                 <h5>Ask Recommendations!</h5>
                 <p>You can ask your teachers for the recommendations for the skills which you have selected</p>
           <div id="skilset">
           {skills.map(skill=>(
-                    <button onClick={()=>addSkill(skill)} className="btn btn-outline-danger mt-2 rounded-pill me-2" type="button">{skill.language}<span>({skill.experience})</span></button>
+                    <button onClick={()=>addSkill(skill)} className="btn btn-outline-primary mt-2 rounded-pill me-2" type="button">{skill.language}<span>({skill.experience})</span></button>
                   ))}            
           </div>
           <hr/>
@@ -140,7 +140,7 @@ return(
               <div className="col-auto">
                 <label for="exampleFormControlInput4" className="form-label">Enter your Teacher's Email address for recommendations</label>
                 <input onChange={(e)=>{setTempEmail(e.target.value);setTempo(e.target.value)}} type="email" className="form-control rounded-pill" id="exampleFormControlInput4" placeholder="name@example.com"value={tempo}/>
-                <button onClick={addJson} id="email-btn-1" type="button" className="btn btn-primary mt-4 rounded-pill"  >Add</button>
+                <button onClick={addJson} id="email-btn-1" type="button" className="btn btn-primary mt-4 "  >Add</button>
               
             
              
@@ -150,7 +150,7 @@ return(
               <p style={{color:"#E60023"}}>{emailSkillError}</p>
 
               {emailSkills.map(skill=>(
-                    <button className="btn btn-outline-success mt-2 rounded-pill me-2" type="button" onClick={()=>{RESkill(skill.language)}}>{skill.language}<span>({skill.experience})</span></button>
+                    <button className="btn btn-outline-success mt-2 rounded-pill me-2" type="button" onClick={()=>{RESkill(skill.language)}}>{skill.language}<span class="close"> &times;</span></button>
                   ))}  
             </div>
           
@@ -186,8 +186,8 @@ return(
            
             
             </div>
-            <button id="btn-4b" onClick={handleOnChangeBack} type="button" className="btn btn-primary mb-3 mt-3 rounded-pill"  >Back</button>
-            <button id="btn-4" onClick={handleOnChangeNext} className="btn btn-outline-primary mb-3 mt-3 ms-2 rounded-pill">Next</button>
+            <button id="btn-4b" onClick={handleOnChangeBack} type="button" className="btn btn-primary mb-3 mt-3 "  >Back</button>
+            <button id="btn-4" onClick={handleOnChangeNext} className="btn btn-primary mb-3 mt-3 ms-2 ">Next</button>
           </div>
       </>
 );

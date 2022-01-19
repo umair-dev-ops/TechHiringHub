@@ -7,6 +7,19 @@ const JobRegister= ()=>{
 
 return(
     <>
+	{/*<form class="row g-3">
+  <div class="col-auto">
+    <label for="staticEmail2" class="visually-hidden">Email</label>
+    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com"/>
+  </div>
+  <div class="col-auto">
+    <label for="inputPassword2" class="visually-hidden">Password</label>
+    <input type="password" class="form-control" id="inputPassword2" placeholder="Password"/>
+  </div>
+  <div class="col-auto">
+  <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+  </div>
+</form>*/}
     <div class="container">
 		<h1 class="header text-center">Post a Job</h1>
 			<form>
@@ -22,8 +35,8 @@ return(
 					<label for="skills">Skills Required</label>
 					<input type="text" class="form-control" id="skills" />
 				</div>
-				<div class="form-row align-items-center">
-					<div class="form-group col-md-6">
+				<div class="row align-items-center">
+					<div class="col-6">
 						<label for="positions">No. of Position</label>
 							<select id="positions" class="form-control">
 								<option selected>1</option>
@@ -35,7 +48,7 @@ return(
 								<option>50+</option>
 							</select>
 					</div>
-					<div class="form-group col-md-6">
+					<div class="col-6">
 						<label for="level">Career level</label>
 						<select id="level" class="form-control">
 							<option selected>Fresh</option>
@@ -44,8 +57,8 @@ return(
 						</select>
 					</div>
 				</div>
-				<div class="form-row align-items-center">
-					<div class="form-group col-md-6">
+				<div class="row align-items-center">
+					<div class="col-6">
 						<label for="qualification">Qualification</label>
 							<select id="qualification" class="form-control">
 								<option selected>Select..</option>
@@ -53,7 +66,7 @@ return(
 								<option>Masters</option>
 							</select>
 					</div>
-					<div class="form-group col-md-6">
+					<div class=" col-6">
 						<label for="experience">Minimum Experience Required</label>
 						<select id="experience" class="form-control">
 							<option selected>1 year</option>
@@ -62,32 +75,33 @@ return(
 						</select>
 					</div>
 				</div>
-				<div class="form-group col-md-6">
+				<div class="row align-items-center">
+				<div class="col-6">
 					<label for="location">Location</label>
 					<input type="text" class="form-control" id="location"/>
 				</div>
-				<div class="form-inline justify-content-center">
-					<div class="form-group col-md-6">
+					<div class="col-6">
 						<label for="salary">Salary range</label>
-						<div class="form-row">
-							<select id="minsalary" class="form-control ">
+						<div class="row align-items-center">
+							<select class="col-3" id="minsalary" class="form-control ">
 								<option selected>From</option>
 								<option>10,000</option>
 								<option>30,000</option>
 							</select>
-							<select id="maxsalary" class="form-control ">
+							<select class="col-3" id="maxsalary" class="form-control ">
 								<option selected>To</option>
 								<option>50,000</option>
 								<option>70,000</option>
 							</select>
 						</div>
 					</div>
-				</div>
+				
+				</div><br/>
 				<div class=" text-center col-md-12">
 					<button type="submit" class="btn btn-primary" >Sign in</button>
 				</div>
 			</form>
-	</div>
+</div>
 
     </>)}
 

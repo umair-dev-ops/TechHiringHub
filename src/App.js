@@ -5,6 +5,7 @@ import {Home} from './components/Home';
 import { SignIn } from './components/SignIn';
 import { Route, Switch } from "react-router-dom"; 
 import Navbar from './components/Navbar';
+import {Footer} from './components/Footer';
 import { ThankYou } from './components/thankYou';
 import { Main } from './components/Main';
 import { Logout } from './components/logout';
@@ -43,6 +44,7 @@ const Routing = () => {
       </Route>
       <Route path="/showcandidates">
         <ShowCandidates/>
+        
       </Route>
       <Route path="/logout">
         <Logout/>

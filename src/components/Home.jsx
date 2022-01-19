@@ -12,6 +12,7 @@ import Navbar from './Navbar'
 import { Redirect } from "react-router-dom";
 import Cookies from 'js-cookie';
 import isAuth from '../lib/isAuth';
+import '../style/showCandidates.css';
 
 const Home =()=>{
   const [loggedin, setLoggedin] = useState(isAuth());
@@ -47,8 +48,20 @@ const [jobList,setJobList]=useState([]);
    }, []);
 
    return loggedin ? (
-    <>
-      <div className="mt-5-c container row">
+      <>
+    {jobList.map(job => (
+  <div class="column w3-center">
+    <div class="card">
+      <h3>{job._id}</h3>
+      <p>{job.title}</p>
+      <p>{job.description}</p>
+                <a href="#" className="btn btn-primary">Apply</a>
+    </div>
+  </div>
+  ))}
+  
+  
+      {/*<div className="mt-5-c container row">
           {jobList.map(job => (
               <div className="col-sm-9 m-1 p-2">
               <div className="card">
@@ -62,7 +75,8 @@ const [jobList,setJobList]=useState([]);
               </div>
               
                 ))}
-      </div>
+      </div>*/}
+      
     </>) : (<Redirect to="/signin" />
   
   

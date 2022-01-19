@@ -42,7 +42,7 @@ const Navbar = (props) => {
   };
 
   return (
-    <AppBar position="fixed" >
+    <AppBar >
        {/* <Toolbar>
         <img src="transparent.png" alt="logo" className={classes.logo} />
       </Toolbar> */}

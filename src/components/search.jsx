@@ -8,7 +8,21 @@ const SearchBar= ()=>{
 
 return(
     <>
-     <div class="jumbotron">
+
+<div class="jumbotron">
+         <div class="container" style={{color:'ffffff'}}>
+  <h2 class="display-4 pt-5">Find your job & </h2> <h2 class="display-4">Make sure goal. </h2>
+  <h3 class="lead">Your dream job is waiting for you..</h3>
+  <hr class="my-4"/>
+  <h4>Choose a Job you love, & you will never have to work a day in your life.</h4>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg mt-3 mb-2" href="#" role="button">Learn more</a>
+  </p>
+                    
+  </div>
+</div>
+
+     {/*<div class="jumbotron">
          <div class="container" style={{color:'ffffff'}}>
   <h2 class="display-4 pt-5">Hello, world!</h2>
   <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -50,7 +64,7 @@ return(
                         </div>
                     </section>
   </div>
-</div>
+</div>*/}
 
 
     </>

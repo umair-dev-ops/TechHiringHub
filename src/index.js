@@ -25,7 +25,7 @@ const client = new ApolloClient({
 });
 
 //for netlify api
-localStorage.setItem('api','/api');
+localStorage.setItem('api','');
 
 store.subscribe(()=>{console.log(store.getState())})
 

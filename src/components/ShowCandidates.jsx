@@ -1,6 +1,8 @@
 import react, { useState,useEffect } from "react";
 import { useDispatch,useSelector, shallowEqual } from "react-redux";
-
+import '../style/showCandidates.css';
+import {Footer} from './Footer';
+import NavbarH from './NavbarH';
 
 const ShowCandidates= ()=>{
 //const[sal,setSal]=useState(props.sal);
@@ -53,11 +55,26 @@ useEffect(()=>{
 
 return(
     
-    <>
-    <h1>show candidates</h1>
-    {users?users.map(user=>(<h1>{user.name}</h1>)):<h1></h1>}
-    <h2>{filterState.salary}</h2>
-    </>
+  <>
+  <NavbarH/> 
+  <br/>  
+<div class="w3-container">
+{users?users.map(user=>(<>
+<div class="column">
+  <div class="w3-card-4">
+  <h1 class="header">{user.name}</h1>
+  <hr/><img src="../Logo/img2.jpg" alt="userimage" class=" w3-circle w3-margin-right " width="25%" height="25%"/>
+      
+  
+      <h2>{user.salary}</h2>
+      <p class="title">{user.radio2}</p>
+      <p>Tech Hiring Hub</p>
+      <br/>
+</div></div>
+</>)):<h1></h1>}
+</div>
+  
+  </>
 
     )
 }

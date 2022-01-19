@@ -151,7 +151,7 @@ const Part6 = ()=>{
  
 return(
     <>
-    <div id="part-6" className="p-5"  >
+    <div id="part-6" className="pt-2 ps-5 pb-5 pe-5"  >
       <div>
             <h6 className="text-center">Last Step:)</h6>
             <h4 className="text-center">Let's get over with it</h4>
@@ -185,24 +185,24 @@ return(
           
             <div className="mb-3">
               <label for="exampleFormControlInput0" className="form-label">Name</label>
-              <input {...register("name", { required: true })} onChange={(e)=>dispatch({type:'NAMESTATE',payload:e.target.value})}  type="text" className="form-control rounded-pill" name="name" id="exampleFormControlInput0" placeholder="Your Full Name"/>
+              <input {...register("name", { required: true })} onChange={(e)=>dispatch({type:'NAMESTATE',payload:e.target.value})}  type="text" className="form-control" name="name" id="exampleFormControlInput0" placeholder="Your Full Name"/>
                <p style={{color:"#E60023"}}>{nameError}</p> 
 
             </div>
             <div className="mb-3">
               <label for="exampleFormControlInput1" className="form-label">Email address</label>
-              <input onChange={(e)=>dispatch({type:'EMAILSTATE',payload:e.target.value})} type="email" className="form-control rounded-pill" name="email" id="exampleFormControlInput1" placeholder="Type your email address"/>
+              <input onChange={(e)=>dispatch({type:'EMAILSTATE',payload:e.target.value})} type="email" className="form-control" name="email" id="exampleFormControlInput1" placeholder="Type your email address"/>
               <p style={{color:"#E60023"}}>{emailError}</p>
             </div>
             <div className="mb-3">
               <label for="exampleFormControlInput2" className="form-label">Password</label>
-              <input onChange={(e)=>dispatch({type:'PASSSTATE',payload:e.target.value})} type="password" className="form-control rounded-pill" name="pass" id="exampleFormControlInput2"/>
+              <input onChange={(e)=>dispatch({type:'PASSSTATE',payload:e.target.value})} type="password" className="form-control" name="pass" id="exampleFormControlInput2"/>
             </div>
            
             <div className="mb-3">
 
-              <button onClick={handleOnChangeBack} id="btn-6b" type="button" className="btn btn-primary mt-3 rounded-pill"  >Back</button>
-              <button onClick={(e)=>{sendData(e);}} type="button" className="btn btn-primary mt-3 ms-2 rounded-pill">Sign Up</button>
+              <button onClick={handleOnChangeBack} id="btn-6b" type="button" className="btn btn-primary mt-3"  >Back</button>
+              <button onClick={(e)=>{sendData(e);}} type="button" className="btn btn-primary mt-3 ms-2">Sign Up</button>
               
             </div>
             

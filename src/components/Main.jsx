@@ -32,7 +32,6 @@ useEffect(()=>{
         {/* <NavbarH></NavbarH> */}
         <ProminentAppBar/>
         <SearchBar></SearchBar>
-        <h1>{filterState.salary}</h1>
         <FormControlLabel
           value="end"
           control={<Switch color="primary" />}
@@ -48,7 +47,7 @@ useEffect(()=>{
         <QueryClientProvider client={queryClient}>
       <Map />
     </QueryClientProvider>
-     </div>
+     </div><br/>
      <Footer></Footer>
 
         </>

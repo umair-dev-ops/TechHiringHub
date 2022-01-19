@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Float four columns side by side */
+  
+  
+  .column {
+    float: left; 
+    padding: 16px;
+    width: 33%;
+   /*padding: 26px;*/
+    text-align: center;
+  }
+  
+  /* Remove extra left and right margins, due to padding 
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  */
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  /*@media screen and (min-width: 600px) {
+      .column {
+        
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+  
+  
+  /* Style the counter cards*/
+  
+  .w3-center{align-items: center}
+  .w3-container{margin-left: 8%;
+  margin-right: 8%;}
+  .w3-card-4{ box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+  .w3-circle{border-radius:50%}
+  .header{background-color: lightblue;}

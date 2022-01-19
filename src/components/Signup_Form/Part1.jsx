@@ -33,6 +33,16 @@ const Unexp =(props)=>{
   const universities=["University of the Punjab","University of Central Punjab","University of Engineering and Technology"
 ,"University of Lahore",]
 
+const setDegreeValue  = (e) => {
+  dispatch({type:'DEGREESTATE',payload:e.target.value});
+  // dispatch({type:'NEXT1-2'});
+  
+  
+
+}
+const degrees=["BS Computer Science","BS Software Engineering","MS Software Engineering"
+,"BS Information Technology",]
+
 const uploadImage= async(e)=>{
   e.preventDefault();
 
@@ -52,7 +62,7 @@ const uploadImage= async(e)=>{
     <div id="criteria" >
                           <div className="mb-3"  onChange={setUniValue}>
                           <label className="mb-2" for="ice-cream-choice">University Name <span style={{color:"red"}}>{props.uniErr}</span></label>
-                          <input onChange={(e)=>{setUni(e.target.value)}} className="form-control  rounded-pill" list="university-list" id="ice-cream-choice" name="ice-cream-choice" value={uni} />
+                          <input onChange={(e)=>{setUni(e.target.value)}} className="form-control " list="university-list" id="ice-cream-choice" name="ice-cream-choice" value={uni} />
 
                           <datalist  id="university-list">
                           {universities.map(university => (
@@ -61,16 +71,24 @@ const uploadImage= async(e)=>{
                           </datalist>
                           </div>
                           <div class="input-group">
-  <span class="input-group-text rounded-pill-custom0">CGPA<span style={{color:"red"}}>{props.cgpaError}</span></span>
+  <span class="input-group-text ">CGPA<span style={{color:"red"}}>{props.cgpaError}</span></span>
   <input onChange={(e) => {dispatch({type:'CGPASTATE',payload:e.target.value});setCgpa(e.target.value)}} type="text" aria-label="First name" class="form-control" value={cgpa}/>
   
-  
-  <select onChange={(e) => {dispatch({type:'DEGREESTATE',payload:e.target.value})}} class="form-select rounded-pill-custom1" id="inputGroupSelect01">
+                          <span className=" input-group-text" for="ice-cream-choice" >Degree<span style={{color:"red"}}>{props.degreeError}</span></span>
+                          <input onChange={(e)=>{setDegree(e.target.value)}} className="form-control " list="degree-list" id="ice-cream-choice"  name="ice-cream-choice" value={degree} />
+
+                          <datalist  id="degree-list">
+                          {degrees.map(degree => (
+                          <option value={degree}>{degree}</option>
+                          ))}
+                          </datalist>
+                          
+  {/*<select onChange={(e) => {dispatch({type:'DEGREESTATE',payload:e.target.value})}} class="form-select" id="inputGroupSelect01">
     <option selected>Degree</option><span style={{color:"red"}}>{props.degreeError}</span>
     <option value="BS Software Engineering">BS Software Engineering</option>
     <option value="BS Computer Science">BS Computer Science</option>
     <option value="BS Information Technology">BS Information Technology</option>
-  </select>
+                          </select>*/}
 
 </div>
             
@@ -78,7 +96,7 @@ const uploadImage= async(e)=>{
               <div className="mb-3" style={{display:props.displayInputFile}}>
                 
                 <label className="mb-2 mt-2" for="myfile">Upload Your Transcript <span style={{color:"red"}}>{props.transErr}</span> </label>
-                <input onChange={(e)=>{dispatch({type:'TRANSCRIPTSTATE',payload:e.target.files[0].name});uploadImage(e)}} className="form-control rounded-pill" type="file" id="myfile" />
+                <input onChange={(e)=>{dispatch({type:'TRANSCRIPTSTATE',payload:e.target.files[0].name});uploadImage(e)}} className="form-control" type="file" id="myfile" />
                 
   
               </div>
@@ -272,7 +290,7 @@ const handleOnChangeRadio2 = (e) => {
   return(
     <>
     
-       <div id="part-1" className="p-5" >
+       <div id="part-1" className="pt-1 ps-5 pb-5 pe-5" >
               <h2 className="text-center">Let's Start!</h2>
               <h4 >Are you?</h4>
               <div id="radio-1" onChange={handleOnChangeRadio1}>
@@ -340,7 +358,7 @@ const handleOnChangeRadio2 = (e) => {
                   
                 </div>
                 <div className="form-check">
-                  {selectedCity.map(city=>(<button className="btn btn-outline-success mt-2 rounded-pill me-2">{city.city}</button>))}
+                  {selectedCity.map(city=>(<button className="btn btn-outline-success mt-2 rounded-pill me-2"><span class="close" >{city.city} &times;</span></button>))}
 
                 </div>
 
