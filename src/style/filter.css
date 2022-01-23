@@ -2,21 +2,14 @@
     box-sizing: border-box
 }
 
-#search {
-    outline: none;
-    border: none;
-    display: inline-block
-}
+
 
 #burgundy {
     color: rgb(153, 40, 59)
 }
 
-#orange,
-select,
-.btn {
-    color: orange
-}
+
+
 
 .fa-search {
     font-size: 20px;
@@ -51,29 +44,21 @@ label {
     margin-bottom: 0
 }
 
-h6 {
-    margin-bottom: 0px
-}
+
 
 #sort {
     outline: none;
     border: none
 }
 
-.btn {
-    border: 1px solid orange;
-    border-radius: 10px;
-    background-color: #fff
-}
+
 
 .btn:hover {
     color: #fff;
     background-color: orange
 }
 
-.card-body {
-    padding: 8px
-}
+
 
 .sign {
     width: 25px;
@@ -127,17 +112,9 @@ h6 {
         float: right
     }
 
-    .card {
-        width: 300px;
-        height: 330px;
-        border: none
-    }
+   
 
-    .card-img-top {
-        width: 295px;
-        height: 200px;
-        border-radius: 10px
-    }
+   
 
     del {
         padding-right: 2px
@@ -182,17 +159,7 @@ h6 {
         float: right
     }
 
-    .card {
-        width: 200px;
-        height: 330px;
-        border: none
-    }
-
-    .card-img-top {
-        width: 200px;
-        height: 200px;
-        border-radius: 10px
-    }
+   
 
     .fa-plus,
     .fa-minus {

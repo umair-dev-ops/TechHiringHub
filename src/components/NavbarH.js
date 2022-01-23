@@ -145,8 +145,8 @@ export default function ProminentAppBar() {
         <StyledToolbar className="container">
         <Typography  variant="h6" className={classes.title}>
              {/* <img src={logo} alt="logo" className="w-25-i mt-1 ms-1-i"/> */}
-             <h3 style={{marginTop:"1px",marginBottom:"-0.5rem",fontWeight:"900",paddingTop:"0.2rem"}}>TechHiring</h3>
-             <h3 style={{marginTop:"1px",marginBottom:"-0.5rem",fontWeight:"900",paddingTop:"0.2rem"}}>Hub.com</h3>
+             <h3 onClick={()=>{history.push('/main')}} style={{marginTop:"1px",marginBottom:"-0.5rem",fontWeight:"900",paddingTop:"0.2rem"}}>TechHiring</h3>
+             <h3 onClick={()=>{history.push('/main')}} style={{marginTop:"1px",marginBottom:"-0.5rem",fontWeight:"900",paddingTop:"0.2rem"}}>Hub.com</h3>
            
       </Typography>
       <Stack direction="row"  sx={{ mt: 3 }}  spacing={2}>
