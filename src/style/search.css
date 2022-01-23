@@ -31,9 +31,7 @@
     /* border-color: #FEBB02 !important; */
     border: 5px solid #FEBB02 !important;
 }
-.btn-search:hover{
-    background-color:#FEBB02  !important;
-}
+
 .wrn-btn{
     width: 50%;
     color: white !important;
