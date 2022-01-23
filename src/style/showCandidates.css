@@ -47,7 +47,7 @@
   
   /* Style the counter cards*/
   
-  .w3-center{align-items: center}
+  .w3-center{align-items: center;position: relative;top:100px}
   .w3-container{margin-left: 8%;
   margin-right: 8%;}
   .w3-card-4{ box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}

@@ -1,54 +1,70 @@
 import react from "react";
-
+import { useState,useEffect } from "react";
+import '../../style/postaJob.css'
 const JobRegister= ()=>{
-
+	const skills=["html","css","javascript","react","angular","devops","linux","python","mysql","docker","redis","git","aws","bootstrap"];
+	const [job,setJob]= useState({
+		title:'',
+		description:'',
+	
+	 });
   
-
+useEffect(() => {
+console.log(job);
+})
 
 return(
     <>
-	{/*<form class="row g-3">
-  <div class="col-auto">
-    <label for="staticEmail2" class="visually-hidden">Email</label>
-    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com"/>
-  </div>
-  <div class="col-auto">
-    <label for="inputPassword2" class="visually-hidden">Password</label>
-    <input type="password" class="form-control" id="inputPassword2" placeholder="Password"/>
-  </div>
-  <div class="col-auto">
-  <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
-  </div>
-</form>*/}
+	
     <div class="container">
-		<h1 class="header text-center">Post a Job</h1>
-			<form>
-				<div class="form-group col-md-12">
-					<label for="title">Job Title</label>
-					<input type="text" class="form-control" id="title"/>
-				</div>
-				<div class="form-group col-md-12">
-					<label for="description">Job Description</label>
-					<textarea class="form-control" id="description" rows="4"></textarea>
-				</div>
-				<div class="form-group col-md-12">
-					<label for="skills">Skills Required</label>
-					<input type="text" class="form-control" id="skills" />
-				</div>
-				<div class="row align-items-center">
-					<div class="col-6">
-						<label for="positions">No. of Position</label>
-							<select id="positions" class="form-control">
-								<option selected>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>5</option>
-								<option>5+</option>
-								<option>10+</option>
-								<option>50+</option>
-							</select>
+		<div className="row mt-5">
+		<div className="col-12">
+			<form id="m-form" className=" p-5">
+			<div className="row">
+					<div className="col align-self-center">
+						<h1 class="text-center" style={{color:"#003580",fontWeight:"900"}}>Tech Hiring Hub</h1>
 					</div>
-					<div class="col-6">
+			</div>
+			<div className="row">
+				<div className="col align-self-center">
+					<h3 class="text-center">Post a Job</h3>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+
+				<div class="form-group col-md-3  ">
+					<label for="title">Job Title</label>
+					<input type="text" class="form-control" id="title" onChange={(e)=>{job.name=e.target.value;setJob({...job})}}/>
+				</div>
+				<div class="form-group col-md-9 ">
+					<label for="description">Job Description</label>
+					<textarea class="form-control" id="description" rows="1" onChange={(e)=>{job.description=e.target.value;setJob({...job})}}></textarea>
+				</div>
+			</div>
+
+				
+			<div className="row justify-content-center">
+
+
+					<div class="form-group col-md-3 ">
+						<label for="skills">Skills Required</label>
+						<input type="text" placeholder="Search" class="form-control" rows="2" id="skills" />
+					
+					</div>
+					<div className="col-md-3">
+							<button className="mt-4 btn btn-outline-success rounded-pill">React +</button>
+					</div>
+					<div className="col-md-6">
+							<button className="mt-4 btn btn-outline-danger  rounded-pill"><span className="close">React X</span></button>
+					</div>
+				
+									
+
+					
+			</div>
+			<div className="row justify-content-center">
+					
+					<div class="col-4">
 						<label for="level">Career level</label>
 						<select id="level" class="form-control">
 							<option selected>Fresh</option>
@@ -56,9 +72,9 @@ return(
 							<option>Experienced</option>
 						</select>
 					</div>
-				</div>
-				<div class="row align-items-center">
-					<div class="col-6">
+				
+				
+					<div class="col-4">
 						<label for="qualification">Qualification</label>
 							<select id="qualification" class="form-control">
 								<option selected>Select..</option>
@@ -66,7 +82,7 @@ return(
 								<option>Masters</option>
 							</select>
 					</div>
-					<div class=" col-6">
+					<div class=" col-4">
 						<label for="experience">Minimum Experience Required</label>
 						<select id="experience" class="form-control">
 							<option selected>1 year</option>
@@ -74,33 +90,64 @@ return(
 							<option>3+years</option>
 						</select>
 					</div>
-				</div>
-				<div class="row align-items-center">
-				<div class="col-6">
-					<label for="location">Location</label>
-					<input type="text" class="form-control" id="location"/>
-				</div>
+					</div>
+			<div className="row justify-content-center">
+
+					
+				
+					<div class="col-6">
+						<label for="location">Location</label>
+						<input type="text" class="form-control" id="location"/>
+					</div>
 					<div class="col-6">
 						<label for="salary">Salary range</label>
 						<div class="row align-items-center">
-							<select class="col-3" id="minsalary" class="form-control ">
+							<div className="col-6">
+							<select id="minsalary" class="form-control">
 								<option selected>From</option>
 								<option>10,000</option>
 								<option>30,000</option>
 							</select>
-							<select class="col-3" id="maxsalary" class="form-control ">
+							</div>
+							<div className="col-6">
+							<select id="maxsalary" class="form-control">
 								<option selected>To</option>
 								<option>50,000</option>
 								<option>70,000</option>
 							</select>
 						</div>
+
 					</div>
 				
-				</div><br/>
+				</div>
+					
+			</div>
+			<div className="row">
+
+			
+				<div class="col-3">
+							<label for="positions">No. of Position</label>
+								<select id="positions" class="form-control">
+									<option selected>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>5</option>
+									<option>5+</option>
+									<option>10+</option>
+									<option>50+</option>
+								</select>
+					</div>
+			
+				</div>
+				
+			
+					<br/>
 				<div class=" text-center col-md-12">
-					<button type="submit" class="btn btn-primary" >Sign in</button>
+					<button type="submit" class="btn btn-warning col-3" >Post</button>
 				</div>
 			</form>
+			</div>
+			</div>
 </div>
 
     </>)}

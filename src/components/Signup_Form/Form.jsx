@@ -12,6 +12,8 @@ import { Route } from "react-router";
 import { Switch } from "react-router";
 import { stat } from "fs";
 import logo_blue from "../../Logo/logo_blues.png";
+import'../../style/form.css';
+
 
 const Form= ()=>{
     const [pageno,setpageno]=useState(1);
@@ -24,23 +26,26 @@ const Form= ()=>{
           
           <div class="container" >
               <div className="row">
-                  <div className="col-3">
-          
-          </div>
-          <div className="col-9">
+                 <div className="col-3">
 
-          <div class="position-relative" >        
-                  <form id="m-form"  class="form position-absolute mt-5 w-75"  method="post" encType="multipart/form-data">
-                  <img src={logo_blue} alt="hello" className="mt-1 " style={{display:"inline-block" ,  width: "255px",
+                 </div>
+          <div className="col-6">
+
+            
+                  <form id="m-form"  class="form p-3 mt-5 w-100"  method="post" encType="multipart/form-data">
+				<h1 class="text-center mt-4" style={{color:"#003580",fontWeight:"900"}}>Tech Hiring Hub</h1>
+
+
+                  {/* <img src={logo_blue} alt="hello" className="mt-2 " style={{display:"inline-block" ,  width: "255px",
     height: "80px",   position: "relative",
-    left: "32%"}} />
+    left: "32%"}} /> */}
                     {pageNo==1&&<Part1></Part1>}
                     {pageNo==2&&<Part3></Part3>}
                     {pageNo==3&&<Part4></Part4>}
                     {pageNo==4&&<Part5></Part5>}
                     {pageNo==5&&<Part6></Part6>}
                     </form>
-                </div>
+            
           </div>
           </div>
              

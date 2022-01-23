@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter} from "react-router-dom";
 
-import'./Form.css';
 import store from './store';
 import {Provider} from 'react-redux';   
 import {
@@ -25,7 +24,7 @@ const client = new ApolloClient({
 });
 
 //for netlify api
-localStorage.setItem('api','');
+localStorage.setItem('api','/api');
 
 store.subscribe(()=>{console.log(store.getState())})
 

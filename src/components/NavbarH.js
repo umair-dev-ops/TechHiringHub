@@ -129,7 +129,7 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   paddingBottom: theme.spacing(2),
   // Override media queries injected by theme.mixins.toolbar
   '@media all': {
-    minHeight: 128,
+    minHeight: 100,
   },
 }));
 
@@ -145,12 +145,12 @@ export default function ProminentAppBar() {
         <StyledToolbar className="container">
         <Typography  variant="h6" className={classes.title}>
              {/* <img src={logo} alt="logo" className="w-25-i mt-1 ms-1-i"/> */}
-             <h1 style={{marginTop:"1px",marginBottom:"-0.5rem",fontWeight:"900",paddingTop:"0.2rem"}}>TechHiring</h1>
-             <h1 style={{marginTop:"1px",marginBottom:"-0.5rem",fontWeight:"900",paddingTop:"0.2rem"}}>Hub.com</h1>
+             <h3 style={{marginTop:"1px",marginBottom:"-0.5rem",fontWeight:"900",paddingTop:"0.2rem"}}>TechHiring</h3>
+             <h3 style={{marginTop:"1px",marginBottom:"-0.5rem",fontWeight:"900",paddingTop:"0.2rem"}}>Hub.com</h3>
            
       </Typography>
       <Stack direction="row"  sx={{ mt: 3 }}  spacing={2}>
-        <button className="btn btn-success" style={{mystyle}} onClick={()=>{history.push('/postjob')}}>Job Post</button>
+        <button className="btn btn-outline-warning" style={{mystyle}} onClick={()=>{history.push('/postjob')}}><b>Job Post</b></button>
        <button className="btn btn-light" style={{color:"#003580",fontWeight:"bolder"}} onClick={()=>{history.push('/signin')}}>Sign IN</button>
        <button className="btn btn-light" style={{color:"#003580",fontWeight:"bolder"}} onClick={()=>{history.push('/')}}>Register</button>
       

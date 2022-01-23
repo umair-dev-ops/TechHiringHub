@@ -32,22 +32,28 @@ useEffect(()=>{
         {/* <NavbarH></NavbarH> */}
         <ProminentAppBar/>
         <SearchBar></SearchBar>
-        <FormControlLabel
-          value="end"
-          control={<Switch color="primary" />}
-          label="End"
-          labelPlacement="end"
-          style={{display:'flex',justifyContent:'center'}}
-          
-     
-        />
-       <div className="container">
-        {/* <Filter></Filter> */}
+        <div className="row">
+          <div col-auto>
+                <FormControlLabel
+                value="end"
+                control={<Switch color="primary" />}
+                label="End"
+                labelPlacement="end"
+                style={{display:'flex',justifyContent:'center'}}
+                />
+          </div>
+          <div col-auto>
+              <div className="container">
+            {/* <Filter></Filter> */}
 
-        <QueryClientProvider client={queryClient}>
-      <Map />
-    </QueryClientProvider>
-     </div><br/>
+                <QueryClientProvider client={queryClient}>
+                      <Map />
+                </QueryClientProvider>
+                </div>
+          </div>
+        </div>
+     
+       <br/>
      <Footer></Footer>
 
         </>

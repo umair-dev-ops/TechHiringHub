@@ -55,7 +55,9 @@ const [jobList,setJobList]=useState([]);
       <h3>{job._id}</h3>
       <p>{job.title}</p>
       <p>{job.description}</p>
-                <a href="#" className="btn btn-primary">Apply</a>
+      <div className="card-body">
+      <a href="#" className="btn btn-primary">Apply</a>
+      </div>
     </div>
   </div>
   ))}

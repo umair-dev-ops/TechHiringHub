@@ -3,6 +3,8 @@ import { useDispatch,useSelector, shallowEqual } from "react-redux";
 import '../style/showCandidates.css';
 import {Footer} from './Footer';
 import NavbarH from './NavbarH';
+import profile from "../Logo/default.png";
+
 
 const ShowCandidates= ()=>{
 //const[sal,setSal]=useState(props.sal);
@@ -59,10 +61,12 @@ return(
   <NavbarH/> 
   <br/>  
 <div class="w3-container">
+<div className="row g-5 justify-content-center">
+
 {users?users.map(user=>(<>
-<div class="column">
+{/* <div class="column">
   <div class="w3-card-4">
-  <h1 class="header">{user.name}</h1>
+  <h1>{user.name}</h1>
   <hr/><img src="../Logo/img2.jpg" alt="userimage" class=" w3-circle w3-margin-right " width="25%" height="25%"/>
       
   
@@ -70,8 +74,23 @@ return(
       <p class="title">{user.radio2}</p>
       <p>Tech Hiring Hub</p>
       <br/>
-</div></div>
-</>)):<h1></h1>}
+</div></div> */}
+  <div className="col-auto">
+<div class="card">
+  <img src={profile} class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">{user.name}</h5>
+    <p class="card-text">{user.radio1}</p>
+    <a href="#" class="btn btn-primary">Contact</a>
+    
+  </div>
+  
+  
+</div>
+</div>
+
+</>)):<h1>no data</h1>}
+</div>
 </div>
   
   </>

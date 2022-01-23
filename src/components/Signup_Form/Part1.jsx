@@ -75,7 +75,7 @@ const uploadImage= async(e)=>{
   <input onChange={(e) => {dispatch({type:'CGPASTATE',payload:e.target.value});setCgpa(e.target.value)}} type="text" aria-label="First name" class="form-control" value={cgpa}/>
   
                           <span className=" input-group-text" for="ice-cream-choice" >Degree<span style={{color:"red"}}>{props.degreeError}</span></span>
-                          <input onChange={(e)=>{setDegree(e.target.value)}} className="form-control " list="degree-list" id="ice-cream-choice"  name="ice-cream-choice" value={degree} />
+                          <input onChange={(e)=>{setDegree(e.target.value);setDegreeValue(e)}} className="form-control " list="degree-list" id="ice-cream-choice"  name="ice-cream-choice" value={degree} />
 
                           <datalist  id="degree-list">
                           {degrees.map(degree => (
@@ -318,7 +318,7 @@ const handleOnChangeRadio2 = (e) => {
               {stateMaintain.radio1===valr1[0]||stateMaintain.radio1===valr1[1]? <Unexp uniErr={uniError} transErr={transError} cgpaError={cgpaError} degreeError={degreeError} displayInputFile={displayInputFile} setDisplayInputFile={setDisplayInputFile} setTransError={setTransError}/>:<div/> }
               </form>
 
-              <h4>Where do you want to work?</h4>
+              <h4 className="mt-2">Where do you want to work?</h4>
               <div id="radio-2" onChange={handleOnChangeRadio2}>
               <div className="form-check">
                   <input checked={valr2[0]===stateMaintain.radio2} className="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault4" value="anywhere"/>
@@ -351,7 +351,7 @@ const handleOnChangeRadio2 = (e) => {
                   <input id="search" onKeyUp={(e)=>displaySkills(e.target.value)}  className="form-control me-2 mb-3 rounded-pill " type="search" placeholder="Search" aria-label="Search"/>
 
                 </div>:<div/>}
-                {showCity?cities.map(citi=>(
+                {showCity&&cities?cities.map(citi=>(
                     <button onClick={()=>setSelectedCity(oldArray => [...oldArray, {city:citi.city,lng:citi.lng,lat:citi.lat}])} className="btn btn-outline-primary mt-2 rounded-pill me-2" type="button" >{citi.city}</button>
                 )) 
                 :<div/>}
@@ -365,7 +365,7 @@ const handleOnChangeRadio2 = (e) => {
                 </div>
 
                 
-              <button onClick={(e)=>{validateP1(e)}} id="btn-1" type="button" className="btn btn-primary mt-4" disabled={nextButton.next1[0]&&nextButton.next1[1]?false:true} >Next</button>
+              <button onClick={(e)=>{validateP1(e)}} id="btn-1" type="button" className="btn btn-primary mt-2" disabled={nextButton.next1[0]&&nextButton.next1[1]?false:true} >Next</button>
               </div>
 
 
