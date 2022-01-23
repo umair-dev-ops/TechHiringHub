@@ -61,7 +61,7 @@ return(
   <NavbarH/> 
   <br/>  
 <div class="w3-container">
-<div className="row g-5 justify-content-center">
+<div className="row">
 
 {users?users.map(user=>(<>
 {/* <div class="column">
@@ -75,7 +75,7 @@ return(
       <p>Tech Hiring Hub</p>
       <br/>
 </div></div> */}
-  <div className="col-auto">
+  <div className="col-3">
 <div class="card">
   <img src={profile} class="card-img-top" alt="..."/>
   <div class="card-body">
